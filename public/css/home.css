@@ -1,0 +1,90 @@
+/* Use Roboto font for the sidebar */
+.sidebar {
+    font-family: "Roboto", sans-serif;
+}
+
+/* Remove border radius from the sidebar list */
+.list-group {
+    border-radius: 0;
+}
+
+.list-group-item:first-child {
+    background: #010c80;
+    color: #eee;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.countdown-section {
+    background: url("../images/countdown-background.png") no-repeat center
+        center;
+    background-size: cover;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.countdown-item {
+    border-radius: 5px;
+    text-align: center;
+    padding: 7.5px 0;
+    flex-direction: column;
+    color: #26282b;
+    width: 60px;
+    height: 60px;
+    background: #eee;
+    margin: 5px;
+}
+
+/* New Styles for Upload Section */
+.upload-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.upload-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    font-weight: bold;
+    color: #eee;
+    background: #010c80;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: #eee;
+    font-size: 20px;
+}
+
+.footer .active,
+.footer a:hover {
+    text-decoration: underline;
+    color: #90b8f8;
+    transition: 0.4s;
+}
