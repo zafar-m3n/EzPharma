@@ -74,15 +74,39 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                <!-- Conditionally display CRUD for Admin -->
+                                @if (Auth::user()->role === 'Admin')
+                                    <a class="nav-link dropdown-toggle" href="#" id="crudDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        CRUD Operations
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="crudDropdown">
+                                        <a class="dropdown-item" href="#">Users</a> <!-- route('admin.users') -->
+                                        <a class="dropdown-item" href="#">Medications</a>
+                                        <!-- route('admin.medications') -->
+                                        <a class="dropdown-item" href="#">Appointments</a>
+                                        <!-- route('admin.appointments') -->
+                                        <a class="dropdown-item" href="#">Payments</a>
+                                        <!-- route('admin.payments') -->
+                                        <a class="dropdown-item" href="#">Articles</a>
+                                        <!-- route('admin.articles') -->
+                                        <!-- Add more CRUD entities here -->
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                @endif
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
