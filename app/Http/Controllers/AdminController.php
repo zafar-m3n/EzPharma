@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Medication;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    // Users CRUD functions
     public function showUsers()
     {
         $users = User::all();
@@ -72,6 +74,68 @@ class AdminController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('admin.users')->with('success', 'User deleted successfully!');
+    }
+
+
+    // Medication CRUD functions
+    public function showMedications()
+    {
+        $medications = Medication::all();
+        return view('admin.medications.index', compact('medications'));
+    }
+
+    public function createMedication()
+    {
+        return view('admin.medications.create');
+    }
+
+    public function storeMedication(Request $request)
+    {
+        $request->validate([
+            'Medication_Name' => 'required|string|max:255',
+            'Stock_Count' => 'required|integer',
+            'Expiry_Date' => 'required|date',
+            'Supplier_Details' => 'required|string',
+            'Cost_Price' => 'required|numeric',
+            'Selling_Price' => 'required|numeric',
+        ]);
+
+        $medication = new Medication($request->all());
+
+        $medication->save();
+
+        return redirect()->route('admin.medications')->with('success', 'Medication added successfully!');
+    }
+
+    public function editMedication($id)
+    {
+        $medication = Medication::find($id);
+        return view('admin.medications.edit', compact('medication'));
+    }
+
+    public function updateMedication(Request $request, $id)
+    {
+        $request->validate([
+            'Medication_Name' => 'required|string|max:255',
+            'Stock_Count' => 'required|integer',
+            'Expiry_Date' => 'required|date',
+            'Supplier_Details' => 'required|string',
+            'Cost_Price' => 'required|numeric',
+            'Selling_Price' => 'required|numeric',
+        ]);
+
+        $medication = Medication::find($id);
+        $medication->fill($request->all());
+
+        $medication->save();
+
+        return redirect()->route('admin.medications')->with('success', 'Medication updated successfully!');
+    }
+
+    public function deleteMedication($id)
+    {
+        Medication::find($id)->delete();
+        return redirect()->route('admin.medications')->with('success', 'Medication deleted successfully!');
     }
 
 }

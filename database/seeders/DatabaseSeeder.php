@@ -34,5 +34,6 @@ class DatabaseSeeder extends Seeder
 
         // Seed additional 98 dummy patient records
         \App\Models\User::factory(98)->create();
+        \App\Models\Medication::factory(30)->create();
     }
 }

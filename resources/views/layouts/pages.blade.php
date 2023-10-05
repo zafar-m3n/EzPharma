@@ -82,8 +82,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="crudDropdown">
                                         <a class="dropdown-item" href="{{ route('admin.users') }}">Users</a>
-                                        <a class="dropdown-item" href="#">Medications</a>
-                                        <!-- route('admin.medications') -->
+                                        <a class="dropdown-item" href="{{ route('admin.medications') }}">Medications</a>
                                         <a class="dropdown-item" href="#">Appointments</a>
                                         <!-- route('admin.appointments') -->
                                         <a class="dropdown-item" href="#">Payments</a>
