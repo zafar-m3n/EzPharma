@@ -51,7 +51,7 @@
                                 <a class="nav-link" href="{{ route('patient.medications') }}">Medications</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Notifications</a>
+                                <a class="nav-link" href="{{ route('patient.notifications') }}">Notifications</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Account</a>

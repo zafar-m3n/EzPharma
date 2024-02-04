@@ -146,5 +146,37 @@ class DatabaseSeeder extends Seeder
             'image' => 'medication-adherence.jpg',
             'category' => 'Health',
         ]);
+
+        // Seed 5 notifications
+        DB::table('notifications')->insert([
+            'user_id' => 2,
+            'title' => 'Appointment Reminder',
+            'message' => 'You have an appointment on 2024-02-04 11:00:00',
+            'is_read' => false,
+        ]);
+        DB::table('notifications')->insert([
+            'user_id' => 2,
+            'title' => 'Appointment Reminder',
+            'message' => 'You have an appointment on 2024-02-04 11:00:00',
+            'is_read' => false,
+        ]);
+        DB::table('notifications')->insert([
+            'user_id' => 2,
+            'title' => 'Appointment Reminder',
+            'message' => 'You have an appointment on 2024-02-04 11:00:00',
+            'is_read' => false,
+        ]);
+        DB::table('notifications')->insert([
+            'user_id' => 2,
+            'title' => 'Appointment Reminder',
+            'message' => 'You have an appointment on 2024-02-04 11:00:00',
+            'is_read' => false,
+        ]);
+        DB::table('notifications')->insert([
+            'user_id' => 2,
+            'title' => 'Appointment Reminder',
+            'message' => 'You have an appointment on 2024-02-04 11:00:00',
+            'is_read' => false,
+        ]);
     }
 }
