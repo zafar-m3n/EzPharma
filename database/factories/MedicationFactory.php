@@ -25,6 +25,7 @@ class MedicationFactory extends Factory
             'Medication_Name' => $this->faker->word,
             'Stock_Count' => $this->faker->randomNumber(2),
             'Expiry_Date' => $this->faker->date,
+            'Category' => $this->faker->word,
             'Supplier_Details' => $this->faker->sentence,
             'Cost_Price' => $this->faker->randomFloat(2, 1, 100),
             'Selling_Price' => $this->faker->randomFloat(2, 1, 100),

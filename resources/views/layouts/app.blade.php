@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'EzPharma') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -34,7 +34,55 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @if (Auth::user() && Auth::user()->role === 'Patient')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('patient.home') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Payments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Medications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Notifications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Account</a>
+                            </li>
+                        @endif
+                        @if (Auth::user() && Auth::user()->role === 'Admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.users') }}">Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.medications') }}">Medications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Payments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Notifications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Account</a>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -60,9 +108,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -77,7 +127,7 @@
             </div>
         </nav>
 
-        <main>
+        <main class="pt-4">
             @yield('content')
         </main>
     </div>

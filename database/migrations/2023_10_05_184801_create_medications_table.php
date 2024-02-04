@@ -16,6 +16,7 @@ return new class extends Migration
         $table->string('Medication_Name');
         $table->integer('Stock_Count');
         $table->date('Expiry_Date');
+        $table->string('Category');
         $table->text('Supplier_Details');
         $table->decimal('Cost_Price', 8, 2);
         $table->decimal('Selling_Price', 8, 2);

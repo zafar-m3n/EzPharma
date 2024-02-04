@@ -9,9 +9,10 @@ class Medication extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Medication_Name', 
-        'Stock_Count', 
-        'Expiry_Date', 
+        'Medication_Name',
+        'Stock_Count',
+        'Expiry_Date',
+        'Category',
         'Supplier_Details',
         'Cost_Price',
         'Selling_Price'
