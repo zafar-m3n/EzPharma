@@ -31,7 +31,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @if (Auth::user() && Auth::user()->role === 'Patient')
@@ -39,7 +39,7 @@
                                 <a class="nav-link" href="{{ route('patient.home') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Appointments</a>
+                                <a class="nav-link" href="{{ route('patient.appointments.index') }}">Appointments</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Payments</a>
@@ -108,7 +108,6 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

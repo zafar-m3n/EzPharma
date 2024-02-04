@@ -52,5 +52,6 @@ Route::middleware(['auth', 'role:Patient'])->group(function () {
     Route::get('/patient/home', function () {
         return view('patient.home');
     })->name('patient.home');
-    // Add more patient routes here
+    // Inside the 'Patient specific routes' middleware group
+    Route::get('/patient/appointments', [App\Http\Controllers\AppointmentController::class, 'index'])->name('patient.appointments.index');
 });
