@@ -68,6 +68,47 @@ class DatabaseSeeder extends Seeder
             'notes' => 'Please be on time!',
         ]);
 
+        // Seed 5 payments
+        DB::table('payments')->insert([
+            'patient_id' => 2,
+            'amount' => 100,
+            'status' => 'pending',
+            'payment_date' => '2024-02-04 11:00:00',
+            'method' => 'cash',
+            'details' => 'Paid for medication',
+        ]);
+        DB::table('payments')->insert([
+            'patient_id' => 2,
+            'amount' => 100,
+            'status' => 'pending',
+            'payment_date' => '2024-02-04 11:00:00',
+            'method' => 'cash',
+            'details' => 'Paid for medication',
+        ]);
+        DB::table('payments')->insert([
+            'patient_id' => 2,
+            'amount' => 100,
+            'status' => 'pending',
+            'payment_date' => '2024-02-04 11:00:00',
+            'method' => 'cash',
+            'details' => 'Paid for medication',
+        ]);
+        DB::table('payments')->insert([
+            'patient_id' => 2,
+            'amount' => 100,
+            'status' => 'pending',
+            'payment_date' => '2024-02-04 11:00:00',
+            'method' => 'cash',
+            'details' => 'Paid for medication',
+        ]);
+        DB::table('payments')->insert([
+            'patient_id' => 2,
+            'amount' => 100,
+            'status' => 'pending',
+            'payment_date' => '2024-02-04 11:00:00',
+            'method' => 'cash',
+            'details' => 'Paid for medication',
+        ]);
 
     }
 }

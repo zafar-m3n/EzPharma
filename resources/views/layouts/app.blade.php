@@ -42,7 +42,7 @@
                                 <a class="nav-link" href="{{ route('patient.appointments.index') }}">Appointments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Payments</a>
+                                <a class="nav-link" href="{{ route('patient.payments.index') }}">Payments</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Articles</a>
