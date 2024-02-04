@@ -54,7 +54,7 @@
                                 <a class="nav-link" href="{{ route('patient.notifications') }}">Notifications</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Account</a>
+                                <a class="nav-link" href="{{ route('patient.account') }}">Account</a>
                             </li>
                         @endif
                         @if (Auth::user() && Auth::user()->role === 'Admin')
