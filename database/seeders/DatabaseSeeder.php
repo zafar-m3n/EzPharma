@@ -6,6 +6,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\Article;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -129,35 +131,35 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed 5 articles
-        DB::table('articles')->insert([
+        Article::create([
             'title' => 'The Importance of Medication Adherence',
             'summary' => 'Medication adherence is important for your health.',
             'content' => 'Medication adherence is important for your health. It is important to take your medication as prescribed by your doctor. If you have any questions about your medication, ask your doctor or pharmacist.',
             'image' => 'medication-adherence.jpg',
             'category' => 'Health',
         ]);
-        DB::table('articles')->insert([
+        Article::create([
             'title' => 'The Importance of Medication Adherence',
             'summary' => 'Medication adherence is important for your health.',
             'content' => 'Medication adherence is important for your health. It is important to take your medication as prescribed by your doctor. If you have any questions about your medication, ask your doctor or pharmacist.',
             'image' => 'medication-adherence.jpg',
             'category' => 'Health',
         ]);
-        DB::table('articles')->insert([
+        Article::create([
             'title' => 'The Importance of Medication Adherence',
             'summary' => 'Medication adherence is important for your health.',
             'content' => 'Medication adherence is important for your health. It is important to take your medication as prescribed by your doctor. If you have any questions about your medication, ask your doctor or pharmacist.',
             'image' => 'medication-adherence.jpg',
             'category' => 'Health',
         ]);
-        DB::table('articles')->insert([
+        Article::create([
             'title' => 'The Importance of Medication Adherence',
             'summary' => 'Medication adherence is important for your health.',
             'content' => 'Medication adherence is important for your health. It is important to take your medication as prescribed by your doctor. If you have any questions about your medication, ask your doctor or pharmacist.',
             'image' => 'medication-adherence.jpg',
             'category' => 'Health',
         ]);
-        DB::table('articles')->insert([
+        Article::create([
             'title' => 'The Importance of Medication Adherence',
             'summary' => 'Medication adherence is important for your health.',
             'content' => 'Medication adherence is important for your health. It is important to take your medication as prescribed by your doctor. If you have any questions about your medication, ask your doctor or pharmacist.',

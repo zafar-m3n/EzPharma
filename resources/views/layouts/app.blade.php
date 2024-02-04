@@ -71,7 +71,7 @@
                                 <a class="nav-link" href="{{ route('admin.appointments.index') }}">Appointments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Articles</a>
+                                <a class="nav-link" href="{{ route('admin.articles.index') }}">Articles</a>
                             </li>
                         @endif
                     </ul>
