@@ -59,7 +59,7 @@
                         @endif
                         @if (Auth::user() && Auth::user()->role === 'Admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
+                                <a class="nav-link" href="{{ route('admin.home') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.users') }}">Users</a>
@@ -68,19 +68,10 @@
                                 <a class="nav-link" href="{{ route('admin.medications') }}">Medications</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Appointments</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Payments</a>
+                                <a class="nav-link" href="{{ route('admin.appointments.index') }}">Appointments</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Articles</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Notifications</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Account</a>
                             </li>
                         @endif
                     </ul>

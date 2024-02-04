@@ -13,8 +13,7 @@
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
             </div>
-            {{-- Add other fields as necessary --}}
-            <button type="submit" class="btn btn-primary">Update</button>
+            {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
         </form>
     </div>
 @endsection

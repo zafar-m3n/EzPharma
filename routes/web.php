@@ -28,6 +28,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/admin/home', function () {
         return view('admin.home');
     })->name('admin.home');
+    Route::get('/admin/appointments', [App\Http\Controllers\Admin\AppointmentController::class, 'index'])->name('admin.appointments.index');
     // Users CRUD Routes
     Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'showUsers'])->name('admin.users');
     Route::get('/admin/users/create', [App\Http\Controllers\AdminController::class, 'createUser'])->name('admin.users.create');

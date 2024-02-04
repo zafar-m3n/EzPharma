@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         // Seed the admin user
         DB::table('users')->insert([
-            'name' => 'Zafarullah Naushad',
+            'name' => 'Amna Rasheed',
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
             'role' => 'Admin',
@@ -26,47 +26,65 @@ class DatabaseSeeder extends Seeder
 
         // Seed the patient user
         DB::table('users')->insert([
-            'name' => 'Bruce Wayne',
-            'email' => 'batman@ezpharma.com',
+            'name' => 'Zafarullah Naushad',
+            'email' => 'thezafar.m3n@gmail.com',
             'password' => Hash::make('password'),
             'role' => 'Patient',
         ]);
 
+        // Seed the pharmacist user
+        DB::table('users')->insert([
+            'name' => 'Chanka Herath',
+            'email' => 'chankaherath2001@gmail.com',
+            'password' => Hash::make('password'),
+            'role' => 'Pharmacist',
+        ]);
+
+        // Seed the pharmacy assistant user
+        DB::table('users')->insert([
+            'name' => 'Bruce Wayne',
+            'email' => 'batman@ezpharma.com',
+            'password' => Hash::make('password'),
+            'role' => 'Pharmacy Assistant',
+        ]);
+
+
         // Seed additional 98 dummy patient records
-        \App\Models\User::factory(98)->create();
-        \App\Models\Medication::factory(30)->create();
+        \App\Models\User::factory(30)->create();
+        \App\Models\Medication::factory(15)->create();
 
         // Seed 5 appointments
-        DB::table('appointments')->insert([
+        \App\Models\Appointment::create([
             'patient_id' => 2,
             'appointment_date' => '2024-02-04 11:00:00',
             'status' => 'pending',
             'notes' => 'Please be on time!',
         ]);
-        DB::table('appointments')->insert([
+        \App\Models\Appointment::create([
             'patient_id' => 2,
             'appointment_date' => '2024-02-04 11:00:00',
             'status' => 'pending',
             'notes' => 'Please be on time!',
         ]);
-        DB::table('appointments')->insert([
+        \App\Models\Appointment::create([
             'patient_id' => 2,
             'appointment_date' => '2024-02-04 11:00:00',
             'status' => 'pending',
             'notes' => 'Please be on time!',
         ]);
-        DB::table('appointments')->insert([
+        \App\Models\Appointment::create([
             'patient_id' => 2,
             'appointment_date' => '2024-02-04 11:00:00',
             'status' => 'pending',
             'notes' => 'Please be on time!',
         ]);
-        DB::table('appointments')->insert([
+        \App\Models\Appointment::create([
             'patient_id' => 2,
             'appointment_date' => '2024-02-04 11:00:00',
             'status' => 'pending',
             'notes' => 'Please be on time!',
         ]);
+
 
         // Seed 5 payments
         DB::table('payments')->insert([

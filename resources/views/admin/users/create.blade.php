@@ -22,6 +22,8 @@
                 <select class="form-select" id="role" name="role" required>
                     <option value="Admin">Admin</option>
                     <option value="Patient">Patient</option>
+                    <option value="Pharmacist">Pharmacist</option>
+                    <option value="Pharmacy Assistant">Pharmacy Assistant</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
