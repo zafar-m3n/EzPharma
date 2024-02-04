@@ -72,4 +72,5 @@ Route::middleware(['auth', 'role:Pharmacist'])->group(function () {
     Route::get('/pharmacist/home', function () {
         return view('pharmacist.home');
     })->name('pharmacist.home');
+    Route::get('/pharmacist/patients', [App\Http\Controllers\PharmacistPatientsController::class, 'index'])->name('pharmacist.patients.index');
 });

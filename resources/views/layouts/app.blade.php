@@ -59,10 +59,10 @@
                         @endif
                         @if (Auth::user() && Auth::user()->role === 'Pharmacist')
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="{{ route('pharmacist.home') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Patients</a>
+                                <a class="nav-link" href="{{ route('pharmacist.patients.index') }}">Patients</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Inventory</a>
