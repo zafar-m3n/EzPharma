@@ -66,3 +66,10 @@ Route::middleware(['auth', 'role:Patient'])->group(function () {
     Route::get('/patient/notifications', [App\Http\Controllers\NotificationController::class, 'index'])->name('patient.notifications');
     Route::get('/patient/account', [App\Http\Controllers\AccountController::class, 'index'])->name('patient.account');
 });
+
+// Pharmacist specific routes
+Route::middleware(['auth', 'role:Pharmacist'])->group(function () {
+    Route::get('/pharmacist/home', function () {
+        return view('pharmacist.home');
+    })->name('pharmacist.home');
+});

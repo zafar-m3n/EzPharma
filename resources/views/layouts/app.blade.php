@@ -57,6 +57,29 @@
                                 <a class="nav-link" href="{{ route('patient.account') }}">Account</a>
                             </li>
                         @endif
+                        @if (Auth::user() && Auth::user()->role === 'Pharmacist')
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Patients</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Inventory</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Notifications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Billing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Analytics</a>
+                            </li>
+                        @endif
                         @if (Auth::user() && Auth::user()->role === 'Admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.home') }}">Dashboard</a>
@@ -76,9 +99,7 @@
                         @endif
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -106,7 +127,8 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>
