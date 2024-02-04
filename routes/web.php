@@ -55,4 +55,5 @@ Route::middleware(['auth', 'role:Patient'])->group(function () {
     // Inside the 'Patient specific routes' middleware group
     Route::get('/patient/appointments', [App\Http\Controllers\AppointmentController::class, 'index'])->name('patient.appointments.index');
     Route::get('/patient/payments', [App\Http\Controllers\PaymentController::class, 'index'])->name('patient.payments.index');
+    Route::get('/patient/articles', [App\Http\Controllers\ArticleController::class, 'index'])->name('patient.articles');
 });
