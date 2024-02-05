@@ -75,4 +75,5 @@ Route::middleware(['auth', 'role:Pharmacist'])->group(function () {
     Route::get('/pharmacist/patients', [App\Http\Controllers\PharmacistPatientsController::class, 'index'])->name('pharmacist.patients.index');
     Route::get('/pharmacist/inventory', [App\Http\Controllers\PharmacistInventoryController::class, 'index'])->name('pharmacist.inventory.index');
     Route::get('pharmacist/appointments', [App\Http\Controllers\PharmacistAppointmentsController::class, 'index'])->name('pharmacist.appointments.index');
+    Route::get('/pharmacist/notifications', [App\Http\Controllers\PharmacistNotificationsController::class, 'index'])->name('pharmacist.notifications');
 });

@@ -13,6 +13,4 @@ class PharmacistAppointmentsController extends Controller
         $appointments = Appointment::with('patient')->get();
         return view('pharmacist.appointments.index', compact('appointments'));
     }
-
-    // Implement other methods (create, store, edit, update, destroy) as needed.
 }

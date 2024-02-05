@@ -72,7 +72,7 @@
                                     href="{{ route('pharmacist.appointments.index') }}">Appointments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Notifications</a>
+                                <a class="nav-link" href="{{ route('pharmacist.notifications') }}">Notifications</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Billing</a>
