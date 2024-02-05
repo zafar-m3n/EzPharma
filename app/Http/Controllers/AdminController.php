@@ -27,7 +27,7 @@ class AdminController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'role' => 'required|string|in:Admin,Patient',
+            'role' => 'required|string|in:Admin,Patient,Pharmacist,Pharmacy Assistant',
         ]);
 
         $user = new User([
@@ -54,7 +54,7 @@ class AdminController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'password' => 'nullable|string|min:8',
-            'role' => 'required|string|in:Admin,Patient',
+            'role' => 'required|string|in:Admin,Patient,Pharmacist,Pharmacy Assistant',
         ]);
 
         $user = User::find($id);
@@ -95,6 +95,7 @@ class AdminController extends Controller
             'Medication_Name' => 'required|string|max:255',
             'Stock_Count' => 'required|integer',
             'Expiry_Date' => 'required|date',
+            'Category' => 'required|string',
             'Supplier_Details' => 'required|string',
             'Cost_Price' => 'required|numeric',
             'Selling_Price' => 'required|numeric',
@@ -119,6 +120,7 @@ class AdminController extends Controller
             'Medication_Name' => 'required|string|max:255',
             'Stock_Count' => 'required|integer',
             'Expiry_Date' => 'required|date',
+            'Category' => 'required|string',
             'Supplier_Details' => 'required|string',
             'Cost_Price' => 'required|numeric',
             'Selling_Price' => 'required|numeric',

@@ -23,6 +23,11 @@
             </div>
 
             <div class="mb-3">
+                <label for="Category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="Category" name="Category" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="Supplier_Details" class="form-label">Supplier Details</label>
                 <textarea class="form-control" id="Supplier_Details" name="Supplier_Details" rows="3" required></textarea>
             </div>

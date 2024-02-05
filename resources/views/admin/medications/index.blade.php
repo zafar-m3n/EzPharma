@@ -13,13 +13,14 @@
 
         <a href="{{ route('admin.medications.create') }}" class="btn btn-primary mb-3">Add New Medication</a>
 
-        <table class="table table-bordered table-striped">
+        <table class="table-bordered table-striped table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Medication Name</th>
                     <th>Stock Count</th>
                     <th>Expiry Date</th>
+                    <th>Category</th>
                     <th>Supplier Details</th>
                     <th>Cost Price</th>
                     <th>Selling Price</th>
@@ -33,6 +34,7 @@
                         <td>{{ $medication->Medication_Name }}</td>
                         <td>{{ $medication->Stock_Count }}</td>
                         <td>{{ $medication->Expiry_Date }}</td>
+                        <td>{{ $medication->Category }}</td>
                         <td>{{ $medication->Supplier_Details }}</td>
                         <td>{{ $medication->Cost_Price }}</td>
                         <td>{{ $medication->Selling_Price }}</td>

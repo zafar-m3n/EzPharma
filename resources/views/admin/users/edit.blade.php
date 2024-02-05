@@ -25,6 +25,9 @@
                 <select class="form-select" id="role" name="role" required>
                     <option value="Admin" {{ $user->role == 'Admin' ? 'selected' : '' }}>Admin</option>
                     <option value="Patient" {{ $user->role == 'Patient' ? 'selected' : '' }}>Patient</option>
+                    <option value="Pharmacist" {{ $user->role == 'Pharmacist' ? 'selected' : '' }}>Pharmacist</option>
+                    <option value="Pharmacy Assistant" {{ $user->role == 'Pharmacy Assistant' ? 'selected' : '' }}>Pharmacy
+                        Assistant</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
