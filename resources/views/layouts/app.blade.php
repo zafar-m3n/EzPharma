@@ -68,7 +68,8 @@
                                 <a class="nav-link" href="{{ route('pharmacist.inventory.index') }}">Inventory</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Appointments</a>
+                                <a class="nav-link"
+                                    href="{{ route('pharmacist.appointments.index') }}">Appointments</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Notifications</a>
