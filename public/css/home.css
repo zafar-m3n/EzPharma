@@ -90,11 +90,11 @@ footer {
 }
 
 .card {
-    border: 2.3px solid red;
+    border: 2.3px solid #010c80;
     border-radius: 7.5px;
 }
 
 .card-header {
-    background-color: red;
+    background-color: #010c80;
     color: white;
 }

@@ -1,40 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
     <div class="container">
-        <div class="row mb-4">
-            <div class="col-md-4">
-                <div class="card bg-primary">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Total
-                            Patients</h5>
-                        <h1 class="card-text text-center">{{ $total_patients }}</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-info">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Total
-                            Appointments</h5>
-                        <h1 class="card-text text-center">{{ $total_appointments }}</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-success">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Total
-                            Medications</h5>
-                        <h1 class="card-text text-center">{{ $total_medications }}</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="sidebar">
@@ -53,8 +24,91 @@
 
             <!-- Main content -->
             <div class="col-md-8">
-                <div class="main-content">
-                    <img src="{{ asset('images/background.png') }}" alt="Background" class="img-fluid">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Total
+                                    Patients</h5>
+                                <h1 class="card-text text-center">{{ $total_patients }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Total
+                                    Appointments</h5>
+                                <h1 class="card-text text-center">{{ $total_appointments }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Total
+                                    Medications</h5>
+                                <h1 class="card-text text-center">{{ $total_medications }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Total
+                                    Pharmacists</h5>
+                                <h1 class="card-text text-center">{{ $total_pharmacists }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Total
+                                    Users</h5>
+                                <h1 class="card-text text-center">{{ $total_users }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Total
+                                    Articles</h5>
+                                <h1 class="card-text text-center">{{ $total_articles }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card bg-danger">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Cancelled Appointments
+                                </h5>
+                                <h1 class="card-text text-center">{{ $total_cancelled_appointments }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-warning">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    Pending Appointments</h5>
+                                <h1 class="card-text text-center">{{ $total_pending_appointments }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Completed Appointments</h5>
+                                <h1 class="card-text text-center">{{ $total_completed_appointments }}</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

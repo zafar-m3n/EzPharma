@@ -24,11 +24,11 @@ class AdminController extends Controller
         //total appointments
         $total_appointments = Appointment::count();
         //total pending appointments
-        $total_pending_appointments = Appointment::where('status', 'Pending')->count();
+        $total_pending_appointments = Appointment::where('status', 'pending')->count();
         //total completed appointments
-        $total_completed_appointments = Appointment::where('status', 'Completed')->count();
+        $total_completed_appointments = Appointment::where('status', 'completed')->count();
         //total cancelled appointments
-        $total_cancelled_appointments = Appointment::where('status', 'Cancelled')->count();
+        $total_cancelled_appointments = Appointment::where('status', 'cancelled')->count();
         //total articles
         $total_articles = Article::count();
         return view('admin.home', compact('total_users', 'total_medications', 'total_patients', 'total_pharmacists', 'total_appointments', 'total_pending_appointments', 'total_completed_appointments', 'total_cancelled_appointments', 'total_articles'));
