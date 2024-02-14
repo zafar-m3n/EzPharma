@@ -5,10 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Medication;
+use App\Models\Appointment;
+use App\Models\Article;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function index()
+    {
+        //total users
+        $total_users = User::count();
+        //total medications
+        $total_medications = Medication::count();
+        //total patients
+        $total_patients = User::where('role', 'Patient')->count();
+        //total pharmacists
+        $total_pharmacists = User::where('role', 'Pharmacist')->count();
+        //total appointments
+        $total_appointments = Appointment::count();
+        //total pending appointments
+        $total_pending_appointments = Appointment::where('status', 'Pending')->count();
+        //total completed appointments
+        $total_completed_appointments = Appointment::where('status', 'Completed')->count();
+        //total cancelled appointments
+        $total_cancelled_appointments = Appointment::where('status', 'Cancelled')->count();
+        //total articles
+        $total_articles = Article::count();
+        return view('admin.home', compact('total_users', 'total_medications', 'total_patients', 'total_pharmacists', 'total_appointments', 'total_pending_appointments', 'total_completed_appointments', 'total_cancelled_appointments', 'total_articles'));
+    }
     // Users CRUD functions
     public function showUsers()
     {

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('pharmacist_id');
             $table->foreign('pharmacist_id')->references('id')->on('users');
             $table->dateTime('appointment_date');
+            $table->dateTime('appointment_time');
             $table->string('status')->default('pending');
             $table->text('notes')->nullable();
             $table->timestamps();

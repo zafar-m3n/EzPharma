@@ -7,7 +7,11 @@
             @csrf
             <div class="mb-3">
                 <label for="appointment_date" class="form-label">Appointment Date</label>
-                <input type="datetime-local" class="form-control" id="appointment_date" name="appointment_date" required>
+                <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+            </div>
+            <div class="mb-3">
+                <label for="appointment_time" class="form-label">Appointment Time</label>
+                <input type="time" class="form-control" id="appointment_time" name="appointment_time" required>
             </div>
             <div class="mb-3">
                 <label for="pharmacist_id" class="form-label">Pharmacist</label>
@@ -22,7 +26,7 @@
                 <label for="notes" class="form-label">Notes (optional)</label>
                 <textarea class="form-control" id="notes" name="notes" rows="4"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Create Appointment</button>
+            <button type="submit" class="btn btn-primary">Book Appointment</button>
         </form>
     </div>
 @endsection

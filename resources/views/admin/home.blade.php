@@ -7,7 +7,35 @@
 
     <div class="container">
         <div class="row mb-4">
-            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Total
+                            Patients</h5>
+                        <h1 class="card-text text-center">{{ $total_patients }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Total
+                            Appointments</h5>
+                        <h1 class="card-text text-center">{{ $total_appointments }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Total
+                            Medications</h5>
+                        <h1 class="card-text text-center">{{ $total_medications }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
             <div class="col-md-4">
                 <div class="sidebar">
                     <ul class="list-group">

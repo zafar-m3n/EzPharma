@@ -1,0 +1,9 @@
+.card {
+    border: 2.3px solid red;
+    border-radius: 7.5px;
+}
+
+.card-header {
+    background-color: red;
+    color: white;
+}

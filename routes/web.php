@@ -25,9 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Admin specific routes
 Route::middleware(['auth', 'role:Admin'])->group(function () {
-    Route::get('/admin/home', function () {
-        return view('admin.home');
-    })->name('admin.home');
+    Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
     Route::get('/admin/appointments', [App\Http\Controllers\Admin\AppointmentController::class, 'index'])->name('admin.appointments.index');
 
     //Articles routes
