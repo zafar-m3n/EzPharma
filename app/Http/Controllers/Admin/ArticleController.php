@@ -19,5 +19,12 @@ class ArticleController extends Controller
         $article = Article::findOrFail($id);
         return view('admin.articles.show', compact('article'));
     }
+
+    public function destroy($id)
+    {
+        $article = Article::findOrFail($id);
+        $article->delete();
+        return redirect()->route('admin.articles.index')->with('success', 'Article deleted successfully');
+    }
 }
 

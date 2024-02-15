@@ -34,6 +34,7 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     //Articles routes
     Route::get('/admin/articles', [App\Http\Controllers\Admin\ArticleController::class, 'index'])->name('admin.articles.index');
     Route::get('/admin/articles/{article}', [App\Http\Controllers\Admin\ArticleController::class, 'show'])->name('admin.articles.show');
+    Route::delete('/admin/articles/{article}', [App\Http\Controllers\Admin\ArticleController::class, 'destroy'])->name('admin.articles.destroy');
 
     // Users CRUD Routes
     Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'showUsers'])->name('admin.users');
