@@ -9,14 +9,12 @@
             @foreach ($medications as $medication)
                 <div class="col-md-3 mb-4">
                     <div class="card h-100">
+                        <img src="{{ $medication->Medication_Image }}" class="card-img-top"
+                            alt="{{ $medication->Medication_Name }}" style="width: 300px;">
                         <div class="card-body">
                             <h5 class="card-title">{{ $medication->Medication_Name }}</h5>
                             <p class="card-text">Stock: {{ $medication->Stock_Count }}</p>
-                            <p class="card-text">Expiry: {{ $medication->Expiry_Date }}</p>
-                            <p class="card-text">Category: {{ $medication->Category }}</p>
-                            <p class="card-text">Supplier: {{ $medication->Supplier_Details }}</p>
-                            <p class="card-text">Cost: ${{ $medication->Cost_Price }}</p>
-                            <p class="card-text">Selling Price: ${{ $medication->Selling_Price }}</p>
+                            <p class="card-text">Selling Price: LKR{{ $medication->Selling_Price }}</p>
                         </div>
                     </div>
                 </div>

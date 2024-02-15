@@ -10,6 +10,7 @@ class Medication extends Model
     use HasFactory;
     protected $fillable = [
         'Medication_Name',
+        'Medication_Image',
         'Stock_Count',
         'Expiry_Date',
         'Category',
