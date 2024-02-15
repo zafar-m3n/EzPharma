@@ -22,7 +22,7 @@ class MedicationFactory extends Factory
      */
     public function definition()
     {
-        $categories = ['Pain Relievers', 'Antibiotics', 'Antiseptics', 'Vitamins', 'Anti-allergic'];
+        $categories = ['Pain Relievers', 'Antibiotics', 'Antiseptics', 'Vitamins', 'Anti-allergic', 'Digestive Health'];
 
         return [
             'Medication_Name' => 'Panadol',

@@ -31,7 +31,8 @@ class AdminController extends Controller
         $total_cancelled_appointments = Appointment::where('status', 'declined')->count();
         //total articles
         $total_articles = Article::count();
-        return view('admin.home', compact('total_users', 'total_medications', 'total_patients', 'total_pharmacists', 'total_appointments', 'total_pending_appointments', 'total_completed_appointments', 'total_cancelled_appointments', 'total_articles'));
+        $medications_by_category = Medication::select('Category', \DB::raw('count(*) as total'))->groupBy('Category')->get();
+        return view('admin.home', compact('total_users', 'total_medications', 'total_patients', 'total_pharmacists', 'total_appointments', 'total_pending_appointments', 'total_completed_appointments', 'total_cancelled_appointments', 'total_articles', 'medications_by_category'));
     }
     // Users CRUD functions
     public function showUsers()

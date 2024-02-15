@@ -94,7 +94,8 @@ footer {
     border-radius: 7.5px;
 }
 
-.card-header {
+.card-header,
+.btn-primary {
     background-color: #010c80;
     color: white;
 }

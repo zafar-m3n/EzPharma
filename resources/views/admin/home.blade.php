@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
     <div class="container">
-
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="sidebar">
@@ -113,6 +112,38 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <h2>Medications by Category</h2>
+
+        <div class="row justify-content-center">
+            @foreach ($medications_by_category as $category)
+                <div class="col-md-2 mb-3">
+                    <div class="card btn-primary">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ $category->Category }}</h5>
+                            </h5>
+                            <h1 class="card-text text-center">{{ $category->total }}</h1>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row upload-section align-items-center">
+            <div class="col-md-6">
+                <h2>UPLOAD YOUR PRESCRIPTION</h2>
+                <p>Our pharmacy awards loyalty program members 1 point for every Rs. 100 spent in-store and on-line. Once
+                    the
+                    customer accumulates 100 points, they are eligible for redemption rewards on their future purchases.</p>
+                <a href="#" class="btn btn-primary">UPLOAD NOW</a>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('images/upload.jpg') }}" alt="Upload" class="upload-image">
+            </div>
+        </div>
+    </div>
     <div class="countdown-section">
         <h1>Upto 5% off on all products.</h1>
         <p>Terms & Conditions Apply</p>
@@ -141,21 +172,7 @@
         <!-- Shop Now Button -->
         <a href="#" class="btn btn-primary">Shop Now</a>
     </div>
-    <!-- Upload Prescription Section -->
-    <div class="container">
-        <div class="row upload-section align-items-center">
-            <div class="col-md-6">
-                <h2>UPLOAD YOUR PRESCRIPTION</h2>
-                <p>Our pharmacy awards loyalty program members 1 point for every Rs. 100 spent in-store and on-line. Once
-                    the
-                    customer accumulates 100 points, they are eligible for redemption rewards on their future purchases.</p>
-                <a href="#" class="btn btn-primary">UPLOAD NOW</a>
-            </div>
-            <div class="col-md-6">
-                <img src="{{ asset('images/upload.jpg') }}" alt="Upload" class="upload-image">
-            </div>
-        </div>
-    </div>
+
     <footer>
         <div class="footer">
             <p>&copy; 2022 Zafarullah Naushad. All Rights Reserved.</p>
