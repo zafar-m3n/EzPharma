@@ -9,7 +9,8 @@
                 border-radius: 7.5px;
             }
 
-            .card-header {
+            .card-header,
+            .btn-primary {
                 background-color: #010c80;
                 color: white;
             }
@@ -19,7 +20,8 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Your Appointments</h2>
-            <a href="{{ route('patient.appointments.create') }}" class="btn btn-primary">Book Appointment</a>
+            <a href="{{ route('patient.appointments.create') }}" class="btn btn-primary">Book
+                Appointment</a>
         </div>
         @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -44,6 +46,7 @@
                                         <th scope="col">Time</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Notes</th>
+                                        <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,8 +57,15 @@
                                             <td>{{ $appointment->pharmacist->name }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->appointment_time }}</td>
-                                            <td>{{ $appointment->status }}</td>
+                                            <td class="text-capitalize">{{ $appointment->status }}</td>
                                             <td>{{ $appointment->notes }}</td>
+                                            <td>
+                                                <form action="{{ route('patient.appointments.cancel', $appointment->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                                </form>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -91,7 +101,7 @@
                                             <td>{{ $appointment->pharmacist->name }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->appointment_time }}</td>
-                                            <td>{{ $appointment->status }}</td>
+                                            <td class="text-capitalize">{{ $appointment->status }}</td>
                                             <td>{{ $appointment->notes }}</td>
                                         </tr>
                                     @endforeach
@@ -128,7 +138,7 @@
                                             <td>{{ $appointment->pharmacist->name }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->appointment_time }}</td>
-                                            <td>{{ $appointment->status }}</td>
+                                            <td class="text-capitalize">{{ $appointment->status }}</td>
                                             <td>{{ $appointment->notes }}</td>
                                         </tr>
                                     @endforeach

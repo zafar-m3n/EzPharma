@@ -63,8 +63,8 @@ Route::middleware(['auth', 'role:Patient'])->group(function () {
     // Inside the 'Patient specific routes' middleware group
     Route::get('/patient/appointments', [App\Http\Controllers\AppointmentController::class, 'index'])->name('patient.appointments.index');
     Route::post('patient/appointments', [App\Http\Controllers\AppointmentController::class, 'store'])->name('patient.appointments.store');
-    //create
     Route::get('/patient/appointments/create', [App\Http\Controllers\AppointmentController::class, 'create'])->name('patient.appointments.create');
+    Route::put('/patient/appointments/cancel/{id}', [App\Http\Controllers\AppointmentController::class, 'cancelAppointment'])->name('patient.appointments.cancel');
 
     Route::get('/patient/payments', [App\Http\Controllers\PaymentController::class, 'index'])->name('patient.payments.index');
     Route::get('/patient/articles', [App\Http\Controllers\ArticleController::class, 'index'])->name('patient.articles');

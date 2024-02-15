@@ -28,6 +28,7 @@ class AppointmentController extends Controller
             ->where('patient_id', $userId)
             ->where(function ($query) {
                 $query->where('status', 'cancelled')
+                    ->orWhere('status', 'declined')
                     ->orWhere('status', 'completed');
             })
             ->get();
@@ -62,5 +63,15 @@ class AppointmentController extends Controller
 
         return redirect()->route('patient.appointments.index')
             ->with('success', 'Appointment created successfully');
+    }
+
+    public function cancelAppointment($id)
+    {
+        $appointment = Appointment::findOrFail($id);
+        $appointment->status = 'cancelled';
+        $appointment->save();
+
+        return redirect()->route('patient.appointments.index')
+            ->with('success', 'Appointment cancelled successfully');
     }
 }
