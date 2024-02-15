@@ -27,7 +27,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
     Route::get('/admin/appointments', [App\Http\Controllers\Admin\AppointmentController::class, 'index'])->name('admin.appointments.index');
-
+    Route::post('/admin/appointments/approve/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'approveAppointment'])
+        ->name('admin.appointments.approve');
+        Route::post('/admin/appointments/decline/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'declineAppointment'])
+        ->name('admin.appointments.decline');
     //Articles routes
     Route::get('/admin/articles', [App\Http\Controllers\Admin\ArticleController::class, 'index'])->name('admin.articles.index');
     Route::get('/admin/articles/{article}', [App\Http\Controllers\Admin\ArticleController::class, 'show'])->name('admin.articles.show');

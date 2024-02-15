@@ -28,16 +28,19 @@
                         <td>{{ $appointment->patient->name }}</td>
                         <td>{{ $appointment->appointment_date }}</td>
                         <td>{{ $appointment->created_at }}</td>
-                        <td>{{ $appointment->status }}</td>
+                        <td class="text-capitalize">{{ $appointment->status }}</td>
                         <td>{{ $appointment->notes }}</td>
                         <td>
                         <td>
-                            <a href="#" class="btn btn-info btn-sm">Edit</a>
-                            <form action="#" method="POST" style="display: inline-block;">
+                            <form action="{{ route('admin.appointments.approve', $appointment->id) }}" method="POST"
+                                style="display: inline-block;">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Are you sure you want to delete this medication?');">Delete</button>
+                                <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                            </form>
+                            <form action="{{ route('admin.appointments.decline', $appointment->id) }}" method="POST"
+                                style="display: inline-block;">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm">Decline</button>
                             </form>
                         </td>
                         </td>
